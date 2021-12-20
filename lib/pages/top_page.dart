@@ -28,34 +28,57 @@ class _TopPageState extends State<TopPage> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     const SizedBox(
-                      height: 130.0,
+                      height: 100.0,
                     ),
                     Container(child: Text("Qiita App",
                       style: TextStyle(
-                          fontSize: 50,
-                          color: Colors.white,
+                        fontSize: 80,
+                        color: Colors.green[300],
+                        fontFamily: "hikki",
+                        fontWeight: FontWeight.bold,
                       ),
                     )),
-                    Container(child: Text("Yoh Haru",
+                    Container(child: Text("Yoh & Haru",
                       style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                        fontSize: 40,
+                        color: Colors.green[300],
+                        fontFamily: "hikki",
+                        fontWeight: FontWeight.bold,
                       ),
                     ))
                   ],
                 ),
                 Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
-                    TextButton(onPressed: () { }, child: Text("ログイン", style: TextStyle(color: Colors.white)),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.green),
-
+                    TextButton(
+                    onPressed: () { },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                      alignment: Alignment.center,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(20)),
+                        color: Colors.green,
+                      ),
+                      child: Text(
+                        "ログイン",
+                        style: TextStyle(color: Colors.white),
                       ),
                     ),
-                    TextButton(onPressed: () { }, child: Text("ゲストでログイン", style: TextStyle(color: Colors.white)),
-                      style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.green),
+                      ),
+                    TextButton(
+                      onPressed: () { },
+                      child: Container(
+                        padding: EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(20)),
+                          color: Colors.white,
+                        ),
+                        child: Text(
+                          "ゲストでログイン",
+                          style: TextStyle(color: Colors.green),
+                        ),
                       ),
                     ),
                   ],
@@ -64,7 +87,6 @@ class _TopPageState extends State<TopPage> {
             ),
           )
         ),
-
       ),
     );
   }
