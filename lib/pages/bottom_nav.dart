@@ -12,26 +12,38 @@ class _BottomNavState extends State<BottomNav> {
 
   int _currentIndex = 0;
   final _pageWidgets = [
-    Center(child: Text("home11")),
+    Center(child: Text("home")),
     Center(child: Text("albam")),
     Center(child: Text("chat")),
+    Center(child: Text("extra"),)
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('BottomNavigationBar'),
-      ),
       body: _pageWidgets.elementAt(_currentIndex),
       bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
-          BottomNavigationBarItem(icon: Icon(Icons.photo_album), title: Text('Album')),
-          BottomNavigationBarItem(icon: Icon(Icons.chat), title: Text('Chat')),
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.format_list_bulleted_outlined),
+            label: 'フィード',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.label_outline),
+            label: 'タグ',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_outline),
+            label: 'マイページ',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings_outlined),
+            label: '設定',
+          ),
         ],
         currentIndex: _currentIndex,
-        fixedColor: Colors.blueAccent,
+        selectedItemColor: const Color(0xFF74C13A),
+        unselectedItemColor: const Color(0xFF828282),
         onTap: _onItemTapped,
         type: BottomNavigationBarType.fixed,
       ),
