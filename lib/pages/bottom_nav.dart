@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:qiita/pages/feed_page.dart';
 
 class BottomNav extends StatefulWidget {
   const BottomNav({Key? key}) : super(key: key);
@@ -12,10 +12,10 @@ class _BottomNavState extends State<BottomNav> {
 
   int _currentIndex = 0;
   final _pageWidgets = [
-    Center(child: Text("home")),
+    FeedPage(),
     Center(child: Text("albam")),
     Center(child: Text("chat")),
-    Center(child: Text("extra"),)
+    Center(child: Text("extra")),
   ];
 
   @override
