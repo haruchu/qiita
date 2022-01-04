@@ -8,7 +8,6 @@ class QiitaClient {
     final url = 'https://qiita.com/api/v2/items';
     final response = await http.get(Uri.parse(url));
     if (response.statusCode == 200) {
-      print(response.statusCode);
       final List<dynamic> jsonArray = json.decode(response.body);
       return jsonArray.map((json) => Article.fromJson(json)).toList();
     } else {
