@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:qiita/model/article.dart';
 import 'package:qiita/services/qiita_client.dart';
+import 'package:intl/intl.dart';
+
 
 class FeedPage extends StatefulWidget {
   const FeedPage({Key? key}) : super(key: key);
@@ -11,6 +13,7 @@ class FeedPage extends StatefulWidget {
 
 class _FeedPageState extends State<FeedPage> {
   late Future<List<Article>> articles;
+  DateFormat outputFormat = DateFormat('yyyy-MM-dd');
 
   @override
   void initState(){
@@ -37,8 +40,10 @@ class _FeedPageState extends State<FeedPage> {
                           shrinkWrap: true,
                           itemCount: snapshot.data.length,
                           itemBuilder: (context, index){
-                        return Container(
-                          child: Text(snapshot.data[index].title),
+                        return ListTile(
+                          leading: Image.network(snapshot.data[index].user.iconUrl),
+                          title: Text(snapshot.data[index].title),
+                          subtitle: Text('${snapshot.data[index].user.id} Date:${outputFormat.format(DateTime.parse(snapshot.data[index].date))} LGTM:${snapshot.data[index].lgtm}'),
                         );
                       }),
                     )
